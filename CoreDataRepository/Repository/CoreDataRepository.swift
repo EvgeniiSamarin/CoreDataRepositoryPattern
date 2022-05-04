@@ -13,6 +13,7 @@ protocol CoreDataRepository {
     // MARK: - Instance Properties
 
     associatedtype Entity
+    var actualSearchedData: AnyPublisher<[Entity], Error>? { get }
 
     // MARK: - Instance Methods
 
@@ -20,8 +21,6 @@ protocol CoreDataRepository {
 //    func add(_ body: @escaping (inout Entity) -> Void) -> AnyPublisher<Entity, Error>
 //    func update(_ entity: Entity) -> AnyPublisher<Void, Error>
 //    func delete(_ entity: Entity) -> AnyPublisher<Void, Error>
-
-    var actualSearchedData: AnyPublisher<[Entity], Error>? { get }
 
     func save(_ objects: [Entity]) -> AnyPublisher<Void, Error>
     func save(_ objects: [Entity], clearBeforeSaving: RepositorySearchRequest) -> AnyPublisher<Void, Error>

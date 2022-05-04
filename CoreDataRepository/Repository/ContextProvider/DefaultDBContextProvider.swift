@@ -13,7 +13,7 @@ final class DefaultDBContextProvider {
     // MARK: - Instance Properties
 
     private lazy var persistentContainer: NSPersistentContainer = {
-        let container = NSPersistentContainer(name: "DataStorageModel")
+        let container = NSPersistentContainer(name: "CoreDataRepository")
      
         container.loadPersistentStores(completionHandler: { (_, error) in
             if let error = error as NSError? {
