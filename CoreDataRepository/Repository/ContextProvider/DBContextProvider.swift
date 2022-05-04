@@ -14,5 +14,4 @@ protocol DBContextProvider {
 
     func mainQueueContext() -> NSManagedObjectContext
     func performBackgroundTask(_ block: @escaping (NSManagedObjectContext) -> Void)
-//    func performBackgroundTask() -> Future<NSManagedObjectContext, Never>
 }
